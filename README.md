@@ -1,6 +1,6 @@
 # CayenneLPP
 
-This is a Cayenne Low Power Payload encoder with Extended Data Types written in Python.
+This is the Cayenne Low Power Payload encoder with Extended Data Types written in Python.
 
 The Cayenne Low Power Payload (LPP) provides a convenient and easy way to send data over LPWAN networks such as LoRaWAN. The Cayenne LPP is compliant with the payload size restriction, which can be lowered down to 11 bytes, and allows the device to send multiple sensor data at one time. Cayenne LPP has several specific functions for some types of data, such as humidity, temperature, pressure, GPS and more.
 
@@ -23,17 +23,34 @@ lpp = []
 lpp.append([1, "addTemperature", 25.5])
 ```
 
-4. Call function cayenneLPP.encodeCayenneLPP(lpp), where lpp is array with your data. Function will return encoded data:
+4. Call the cayenneLPP.encodeCayenneLPP(lpp) function, where lpp is array with your data. The function returns encoded data:
 ```Python
 payload = cayenneLPP.encodeCayenneLPP(lpp)
 ```
+
+### The whole code will look like this:
+```Python
+import src.cayenneLPP as cayenneLPP
+
+lpp = []
+lpp.append([1, "addTemperature", 25.5])
+
+payload = cayenneLPP.encodeCayenneLPP(lpp)
+print(payload)
+```
+
+The printed output (payload) will look like this:
+```
+016700ff
+```
+
 
 ## Data types
 ### Format
 ```Python
 lpp.append([channelNumber, "dataType", value])
 ```
-
+### Data types
 
 | Data type | Min value | Max value | Example |
 | --- | --- | --- |  --- |
