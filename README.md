@@ -18,7 +18,7 @@ import src.cayenneLPP as cayenneLPP
 lpp = []
 ```
 
-3. Append your data to array (for example add temperature 25.5 °C to channel 1):
+3. Append your data to the array (for example add temperature 25.5 °C to channel 1):
 ```Python
 lpp.append([1, "addTemperature", 25.5])
 ```
