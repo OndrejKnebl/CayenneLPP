@@ -34,7 +34,6 @@ def encodeCayenneLPP(lpp):
 
     payload = ""
     onePayload = ""
-    duplicityDict = {}
 
 
     for i in range(0,len(lpp)):
